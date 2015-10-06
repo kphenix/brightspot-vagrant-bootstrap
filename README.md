@@ -4,12 +4,6 @@ This is a quick way to get up and running with Brightspot using Virtual Box and 
 
 ### Installation
 
-If you haven't already, install Homebrew.
-
-```
-$ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-``
-
 ```
 $ brew cask install java
 ```
