@@ -94,13 +94,25 @@ To stop, run `vagrant halt`
 
 ### Restart
 
-To restart run `vagrant up` then `vagrant ssh` to log into vagrant. From there navigate to tomcat and start it.
+To restart the application after a shutdown, run `vagrant up` then `vagrant ssh` to log into vagrant. From there navigate to tomcat and start it.
 
 `sudo /home/vagrant/tomcat/bin/startup.sh`
 
+### New Deploy
+
+The reloader will manage the deployment of new code to the application, but sometimes when a config change is made (pom.xml for example) you need to remove the ROOT.war in the tomcat and redeploy a new war file.
+
+- Compile the project to create a new war file by running `mvn clean install` in the project dir.
+- Run `vagrant up`
+- Make sure tomcat is not running
+- Navigate to the webapps dir of tomcat `$ cd /home/vagrant/tomcat/` and run `sudo rm -rf ROOT ROOT.war` to remove the old war file and dir.
+- Run `$ sudo cp /vagrant/project/target/*.war ROOT.war` to copy the new war file from the project into the vagrant tomcat.
+- Start tomcat `$ sudo /home/vagrant/tomcat/bin/startup.sh`
+
+
 ### Notes
 
-- Nothing should be running on port 8080
+- Nothing should be running on port 8080 when you run `vagrant up`
 - To change the database name or password modify it within the bootstrap.sh and context.xml
 
 
