@@ -1,6 +1,6 @@
-# brightspot-vagrant-bootstrap
+# Quickstart Brightspot using Vagrant
 
-This is a quick way to get up and running with Brightspot using Vagrant.
+This is a quick way to get up and running with Brightspot locally using Vagrant.
 
 It requires:
 
@@ -18,20 +18,20 @@ Homebrew can be used to install all requirements, otherwise go to each website a
 $ brew cask install java
 ```
 
-[Web Download](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
+[Java 8 Web download](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
 
 ```
 $ brew install maven 
 ```
-[Web Download](https://maven.apache.org/download.cgi)
+[Maven web download](https://maven.apache.org/download.cgi)
 ```
 $ brew cask install virtualbox
 ```
-[Web Download](https://www.virtualbox.org/wiki/Downloads)
+[VirtualBox web download](https://www.virtualbox.org/wiki/Downloads)
 ```
 $ brew cask install vagrant
 ```
-[Web Download](https://www.vagrantup.com/downloads.html)
+[Vagrant web download](https://www.vagrantup.com/downloads.html)
 ```
 $ git clone https://github.com/kphenix/brightspot-vagrant-bootstrap.git
 ```
@@ -48,7 +48,7 @@ Run maven to compile the project and create the war file:
 $ mvn clean install
 ```
 
-Navigate back to the Root and run `vagrant up` t to start the project locally:
+Navigate back to the Root (where the VagrantFile is) and run `vagrant up` to start the project locally:
 
 ```
 $ vagrant up
@@ -59,7 +59,7 @@ Once completed, access Brightspot at [http://localhost:8080/cms](http://localhos
 
 ### Get Started
 
-Open the `Project` maven project in any text editor or IDE and create a new Java class within the java/com/project directory:
+Open the `Project` maven project in any text editor or IDE and create a new Java class within the `java/com/project` directory:
 
 ```
 package com.project;
@@ -101,6 +101,6 @@ To restart run `vagrant up` then `vagrant ssh` to log into vagrant. From there n
 ### Notes
 
 - Nothing should be running on port 8080
-- To change the database name modify it within the bootstrap.sh and context.xml
+- To change the database name or password modify it within the bootstrap.sh and context.xml
 
 
