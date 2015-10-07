@@ -57,6 +57,50 @@ $ vagrant up
 Once completed, access Brightspot at [http://localhost:8080/cms](http://localhost:8080/cms)
 
 
+### Get Started
 
+Open the `Project` maven project in any text editor or IDE and create a new Java class within the java/com/project directory:
+
+```
+package com.project;
+
+import com.psddev.dari.db.*;
+import com.psddev.dari.util.*;
+import java.util.*;
+import com.psddev.cms.db.*;
+
+public class HelloWorld extends Content {
+
+	private String helloWorld;
+
+	public String getHelloWorld(){
+		return helloWorld;
+	}
+	
+	public void setHelloWorld(String helloWorld){
+		this.helloWorld = helloWorld;
+	}
+  
+}
+```
+
+Navigate to Brightspot and run `http://localhost:8080/cms?_reload=true` to reload the application. You should see the prompt to install the reloader.
+
+Click into Search and in the Create drop-down find the `HelloWorld` content type.  
+
+### Shutdown
+
+To stop, run `vagrant halt`
+
+### Restart
+
+To restart run `vagrant up` then `vagrant ssh` to log into vagrant. From there navigate to tomcat and start it.
+
+`sudo /home/vagrant/tomcat/bin/startup.sh`
+
+### Notes
+
+- Nothing should be running on port 8080
+- To change the database name modify it within the bootstrap.sh and context.xml
 
 
